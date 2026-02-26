@@ -1,0 +1,4 @@
+{"id":"c000","name":"write_reading_review","title":"Write Reading Review Prompt","path":"prompt/c000_write_reading_review.md"}
+{"id":"c001","name":"read_and_write_proof_sketch","title":"Read And Write Proof Sketch Prompt","path":"prompt/c001_read_and_write_proof_sketch.md"}
+{"id":"c002","name":"split_latex","title":"Split LaTeX Prompt","path":"prompt/c002_split_latex.md"}
+

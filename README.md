@@ -5,9 +5,10 @@ Copy this folder to bootstrap a new research project with the same workflow as t
 ## Folder layout
 
 - `prompt/`: reusable AI prompts.
-  - includes `write_reading_review.md`, `read_and_write_proof_sketch.md`, `split_latex.md`
+  - includes `c000_write_reading_review.md`, `c001_read_and_write_proof_sketch.md`, `c002_split_latex.md`
+  - `command_list.jsonl` catalogs available prompts
 - `literature/`: paper library and metadata.
-  - `pdf_papers/`, `tex/`, `bibliography.jsonl`
+  - `pdf_papers/`, `pdf_books/`, `tex/`, `bibliography.jsonl`
 - `writing/`: LaTeX writing projects.
   - `catalog.jsonl` for writing-project tracking
   - starter project `w00001_project_name/`
@@ -25,8 +26,8 @@ Copy this folder to bootstrap a new research project with the same workflow as t
 5. Build:
    - `cd writing/<your_project>`
    - `python3 build.py`
-6. Add papers under `literature/pdf_papers/` and update `literature/bibliography.jsonl`.
-7. Use prompts in `prompt/` to standardize reading reviews and proof-sketch writing.
+6. Add papers under `literature/pdf_papers/` (and books under `literature/pdf_books/`) and update `literature/bibliography.jsonl` with entries following the `p000xx` / `b000xx` patterns.
+7. Use prompts in `prompt/` (via `command_list.jsonl`) to standardize reading reviews and proof-sketch writing.
 
 ## Notes
 
