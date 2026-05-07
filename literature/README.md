@@ -23,14 +23,14 @@ Each line is a JSON object with the following fields:
 ```json
 {
   "id":         "b00001",
-  "bib_key":    "smith2023stability",
+  "bib_key":    "vaswani2017attention",
   "type":       "paper",
-  "title":      "Full paper title",
-  "authors":    "Smith et al.",
-  "year":       2023,
-  "arxiv_id":   "2301.12345",
-  "path":       "literature/pdf_papers/control/b00001_smith-2023-stability",
-  "tex_source": "literature/pdf_papers/control/b00001_smith-2023-stability/tex_source"
+  "title":      "Attention Is All You Need",
+  "authors":    "Vaswani et al.",
+  "year":       2017,
+  "arxiv_id":   "1706.03762",
+  "path":       "literature/pdf_papers/examples/b00001_vaswani-2017-attention",
+  "tex_source": "literature/pdf_papers/examples/b00001_vaswani-2017-attention/tex_source"
 }
 ```
 
