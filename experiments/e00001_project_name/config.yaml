@@ -1,0 +1,20 @@
+# Experiment configuration
+# Fill in values for your specific experiment.
+
+experiment:
+  name: "[experiment_name]"
+  description: "[what this experiment tests]"
+
+# Model / algorithm settings
+model:
+  # key: value
+
+# Run settings
+run:
+  seed: 42
+  # key: value
+
+# Output settings
+output:
+  figure_dir: "figure"   # paper-ready figures (tracked in git)
+  run_dir: "runs"        # timestamped run outputs (gitignored)
