@@ -43,7 +43,7 @@ Required output structure:
    - Main contributions
    - Strengths
    - Limitations/assumptions
-   - Relevance to age-structured PDE/control work
+   - Relevance to your current research direction
 6. Optional follow-up notes:
    - Open questions
    - Ideas to reuse in our writing

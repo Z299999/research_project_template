@@ -1,4 +1,8 @@
 {"id":"c000","name":"write_reading_review","title":"Write Reading Review Prompt","path":"prompt/c000_write_reading_review.md"}
 {"id":"c001","name":"read_and_write_proof_sketch","title":"Read And Write Proof Sketch Prompt","path":"prompt/c001_read_and_write_proof_sketch.md"}
 {"id":"c002","name":"split_latex","title":"Split LaTeX Prompt","path":"prompt/c002_split_latex.md"}
-
+{"id":"c003","name":"add_new_paper","title":"Add New Paper Prompt (with arXiv PDF and TeX source download)","path":"prompt/c003_add_new_paper.md"}
+{"id":"c004","name":"write_latex_reading_review","title":"Write LaTeX Reading Review Prompt","path":"prompt/c004_write_latex_reading_review.md"}
+{"id":"c005","name":"abstract_intro_checklist","title":"Abstract And Introduction Checklist","path":"prompt/c005_abstract_intro_checklist.md"}
+{"id":"c006","name":"proof_math_writing_checklist","title":"Proof And Mathematical Writing Checklist","path":"prompt/c006_proof_math_writing_checklist.md"}
+{"id":"c007","name":"commit_message_checklist","title":"Commit Message Checklist","path":"prompt/c007_commit_message_checklist.md"}
