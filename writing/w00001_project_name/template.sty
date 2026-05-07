@@ -1,11 +1,23 @@
-\\usepackage{amsmath,amssymb,amsthm,mathtools}
-\\usepackage[hidelinks]{hyperref}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\allowdisplaybreaks
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{enumitem}
 
-\\newtheorem{theorem}{Theorem}[section]
-\\newtheorem{lemma}[theorem]{Lemma}
-\\newtheorem{proposition}[theorem]{Proposition}
-\\newtheorem{corollary}[theorem]{Corollary}
-\\theoremstyle{definition}
-\\newtheorem{definition}[theorem]{Definition}
-\\newtheorem{remark}[theorem]{Remark}
-\\newtheorem{assumption}[theorem]{Assumption}
+% ---------- Theorem Environments ----------
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{assumption}[theorem]{Assumption}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% ---------- Common Macros ----------
+\newcommand{\dd}{\,\mathrm{d}}   % upright differential: \int f \dd x

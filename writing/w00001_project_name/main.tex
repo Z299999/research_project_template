@@ -1,16 +1,31 @@
-\\documentclass[11pt]{article}
-\\input{template}
+% For a conference paper, replace the next line with e.g.:
+%   \documentclass[conference]{IEEEtran}
+% and remove \input{template} (inline the preamble or adapt as needed).
+\documentclass[11pt]{article}
+\input{template}
 
-\\title{Project Draft}
-\\date{\\today}
+\title{[Paper Title]}
+\author{[Author Names]\\[Institution]}
+\date{\today}
 
-\\begin{document}
-\\maketitle
-\\tableofcontents
+\begin{document}
 
-\\input{sections/01_introduction/section}
+\maketitle
 
-\\bibliographystyle{plain}
-\\bibliography{references}
+\begin{abstract}
+[One paragraph. State: (1) the system class, (2) the key reduction or
+transformation, (3) the resulting structure that enables the design,
+(4) the main theorem-level result, (5) numerical simulations confirm.]
+\end{abstract}
 
-\\end{document}
+\input{sections/01_introduction/section}
+\input{sections/02_problem_setup/section}
+\input{sections/03_main_results/section}
+\input{sections/04_proof/section}
+\input{sections/05_simulations/section}
+\input{sections/06_conclusion/section}
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
