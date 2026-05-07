@@ -9,13 +9,13 @@ You are helping me register a new paper in this repository.
 
 Inputs (fill in placeholders):
 - Paper ID (unique, monotonically increasing): `{BID}` (e.g., `b00027`)
-- Short name for folder: `{SHORTNAME}` (e.g., `smith-2023-stability`)
+- Short name for folder: `{SHORTNAME}` (e.g., `vaswani-2017-attention`)
 - Topic subfolder under `literature/pdf_papers/`: `{TOPIC_SUBFOLDER}` (e.g., `control`, `biology`)
 - Metadata:
   - Title: `{TITLE}`
-  - Authors: `{AUTHORS}` (e.g., `Smith et al.`)
+  - Authors: `{AUTHORS}` (e.g., `Vaswani et al.`)
   - Year: `{YEAR}`
-  - BibTeX key: `{BIBKEY}` (e.g., `smith2023stability`)
+  - BibTeX key: `{BIBKEY}` (e.g., `vaswani2017attention`)
 - Source (choose one):
   - arXiv ID: `{ARXIV_ID_OR_EMPTY}` (e.g., `2301.12345`; leave empty if not on arXiv)
   - Existing PDF already in `literature/pdf_papers/`: `{EXISTING_PDF_FILENAME_OR_EMPTY}`

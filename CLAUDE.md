@@ -61,7 +61,7 @@ Usage: "perform c000 on b00006 chapter 3" means run the reading review prompt on
 
 | ID | BibTeX key | Notes |
 |----|-----------|-------|
-| b00001 | smith2023stability | Ch. 2: main stability theorem |
+| b00001 | vaswani2017attention | Attention Is All You Need (example paper) |
 ]
 
 ## Literature Storage Convention
@@ -77,7 +77,7 @@ the paper's folder.
 
 Each paper has two identifiers recorded in `literature/bibliography.jsonl`:
 - `id`: repo ID (e.g., `b00001`)
-- `bib_key`: BibTeX key used in writing projects (e.g., `smith2023stability`)
+- `bib_key`: BibTeX key used in writing projects (e.g., `vaswani2017attention`)
 
 **When the user refers to a paper by its bib key**, always look up the local path in
 `literature/bibliography.jsonl` and read the file directly — do not fetch from the web.

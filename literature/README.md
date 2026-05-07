@@ -64,9 +64,9 @@ Create a new subfolder when a second paper on a new topic is added.
 For papers with an arXiv preprint, store **both** the PDF and the TeX source:
 
 ```
-b00001_smith-2023-stability/
-  smith2023stability.pdf      ← downloaded from arxiv.org/pdf/...
-  tex_source/                 ← extracted from arxiv.org/e-print/...
+b00001_vaswani-2017-attention/
+  vaswani2017attention.pdf    ← downloaded from arxiv.org/pdf/1706.03762
+  tex_source/                 ← extracted from arxiv.org/e-print/1706.03762
     main.tex
     ...
 ```
