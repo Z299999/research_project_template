@@ -1,1 +1,1 @@
-{"id":"p00000","bibkey":"example2026paper","type":"paper","title":"Example Title","authors":"A. Author","year":2026,"path":"literature/pdf_papers/p00000_example"}
+{"id":"b00001","bib_key":"author2026title","type":"paper","title":"Example Paper Title","authors":"A. Author and B. Coauthor","year":2026,"arxiv_id":"2601.00001","path":"literature/pdf_papers/your_topic/b00001_author-2026-title","tex_source":"literature/pdf_papers/your_topic/b00001_author-2026-title/tex_source"}
