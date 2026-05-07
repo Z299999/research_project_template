@@ -45,16 +45,18 @@ Each line is a JSON object with the following fields:
 
 ## Topic Subfolder Convention
 
-Organize `pdf_papers/` into topic subfolders as the library grows:
+Organize `pdf_papers/` into topic subfolders as the library grows.
+The current template ships with one example paper:
 
 ```
 pdf_papers/
-  control/
-  biology/
-  ml/
-  ...
+  examples/
+    b00001_vaswani-2017-attention/   ← Vaswani et al. (2017), "Attention Is All You Need"
+      vaswani2017attention.pdf
+      tex_source/
 ```
 
+Replace `examples/` with your own topic subfolders (e.g. `control/`, `biology/`, `ml/`).
 Create a new subfolder when a second paper on a new topic is added.
 
 ## arXiv TeX Source Convention
