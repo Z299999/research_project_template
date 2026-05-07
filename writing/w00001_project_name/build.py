@@ -14,6 +14,14 @@ def run(cmd):
     subprocess.run(cmd, cwd=ROOT, check=True)
 
 
+def run_bibtex():
+    print(">", "bibtex", AUX_BASENAME)
+    # Exit code 2 means "no citations" — benign for a template with no \cite yet.
+    result = subprocess.run(["bibtex", AUX_BASENAME], cwd=ROOT)
+    if result.returncode not in (0, 2):
+        raise subprocess.CalledProcessError(result.returncode, "bibtex")
+
+
 def cleanup_aux_files():
     removed = []
     for suffix in AUX_SUFFIXES:
@@ -30,7 +38,7 @@ def cleanup_aux_files():
 def main():
     try:
         run(["pdflatex", "-synctex=1", "-interaction=nonstopmode", MAIN_TEX])
-        run(["bibtex", AUX_BASENAME])
+        run_bibtex()
         run(["pdflatex", "-synctex=1", "-interaction=nonstopmode", MAIN_TEX])
         run(["pdflatex", "-synctex=1", "-interaction=nonstopmode", MAIN_TEX])
         cleanup_aux_files()
