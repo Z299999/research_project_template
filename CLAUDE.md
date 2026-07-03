@@ -55,6 +55,8 @@ Files in `prompt/` are reusable prompts invoked by ID:
 - **c008** — Experiment structure guideline (stable `src/` kernel, frozen
   `scripts/exps/` campaigns, immutable `runs/`); worked example is
   `experiments/e00001_damped_oscillator`
+- **c009** — Register a paper from its title alone (identify, fetch, and add to
+  `literature/`); the title-only sibling of c003
 
 Usage: "perform c000 on b00006 chapter 3" means run the reading review prompt on that source.
 

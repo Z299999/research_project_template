@@ -7,3 +7,4 @@
 {"id":"c006","name":"proof_math_writing_checklist","title":"Proof And Mathematical Writing Checklist","path":"prompt/c006_proof_math_writing_checklist.md"}
 {"id":"c007","name":"commit_message_checklist","title":"Commit Message Checklist","path":"prompt/c007_commit_message_checklist.md"}
 {"id":"c008","name":"experiment_structure_guideline","title":"Experiment Structure Guideline","path":"prompt/c008_experiment_structure_guideline.md"}
+{"id":"c009","name":"add_literature_from_title","title":"Add Literature From Title Prompt","path":"prompt/c009_add_literature_from_title.md"}
