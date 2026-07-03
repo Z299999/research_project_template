@@ -52,6 +52,9 @@ Files in `prompt/` are reusable prompts invoked by ID:
 - **c005** — Style checklist for abstracts and introductions
 - **c006** — Style checklist for theorem statements, proofs, and mathematical exposition
 - **c007** — Checklist for typed commit subjects and detailed commit bodies
+- **c008** — Experiment structure guideline (stable `src/` kernel, frozen
+  `scripts/exps/` campaigns, immutable `runs/`); worked example is
+  `experiments/e00001_damped_oscillator`
 
 Usage: "perform c000 on b00006 chapter 3" means run the reading review prompt on that source.
 
