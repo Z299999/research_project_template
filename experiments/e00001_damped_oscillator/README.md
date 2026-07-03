@@ -1,35 +1,48 @@
-# e00001 — [Experiment Name]
+# e00001 — Damped Harmonic Oscillator (sample experiment)
 
-## Goal
+A minimal, runnable worked example of the repository's experiment workflow
+(`prompt/c008_experiment_structure_guideline.md`). It integrates
 
-[One paragraph: what hypothesis or question this experiment tests, and
-how it connects to the writing project it supports.]
+    x'' + 2 zeta omega x' + omega^2 x = 0
 
-## Setup
+and shows how a single stable kernel yields three regimes from configuration
+alone. Supports the writing sample `writing/w00003_sample_note`.
+
+## Run it
 
 ```bash
 pip install -r requirements.txt
+bash scripts/exps/AA.sh   # underdamped   (zeta=0.2) — flagship
+bash scripts/exps/AB.sh   # critical      (zeta=1.0)
+bash scripts/exps/AC.sh   # overdamped    (zeta=2.5)
 ```
 
-## Usage
+Each run writes an immutable `runs/<timestamp>_<CODE>_seed<N>/` containing
+`trajectory.png`, `phase.png`, `metrics.json`, and a `config.yaml` snapshot, and
+refreshes `runs/latest/`. `runs/` is gitignored.
 
-```bash
-# Run the main experiment
-python run.py run
+## Campaigns
 
-# Show current status
-python run.py status
+| Code | Preset                      | Regime            |
+|------|-----------------------------|-------------------|
+| AA   | `AA_underdamped.yaml`       | underdamped, ζ=0.2 (flagship) |
+| AB   | `AB_critical.yaml`          | critically damped, ζ=1.0 |
+| AC   | `AC_overdamped.yaml`        | overdamped, ζ=2.5 |
+
+## Where figures go
+
+The flagship AA `trajectory.png` is copied to
+`writing/w00003_sample_note/figures/oscillator_underdamped.png`. That explicit
+copy is the only bridge from experiment to paper (see `EXPERIMENT_LOG.md`).
+
+## Layout
+
 ```
-
-Run outputs are written to `runs/<YYYYMMDD_HHMMSS>/` (gitignored).
-Paper-ready figures are saved to `figure/` (tracked).
-
-## Structure
-
-```
-config.yaml    — hyperparameters and settings
-run.py         — main entry point / CLI dispatcher
-scripts/       — helper modules
-figure/        — paper-ready output figures (tracked)
-runs/          — timestamped run outputs (gitignored)
+src/            stable kernel — oscillator.simulate(...) + viz.fig_*(res, out)
+run.py          single entry point (--exp / --config / --tag / --seed)
+config.yaml     default preset (= flagship AA)
+scripts/exps/   frozen campaign records: <CODE>.sh + <CODE>_<name>.yaml
+runs/           immutable timestamped outputs + latest/  (gitignored)
+idea.md         the hypothesis
+EXPERIMENT_LOG.md   lab notebook, one entry per campaign
 ```

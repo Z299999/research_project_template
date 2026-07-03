@@ -1,66 +1,114 @@
 #!/usr/bin/env python3
-"""Main entry point for e00001.
+"""Single entry point for the damped-oscillator sample experiment.
 
 Usage:
-    python run.py run      - run the experiment
-    python run.py status   - show current output status
+    python3 run.py --exp oscillator --config scripts/exps/AA_underdamped.yaml \
+                   --tag AA --seed 1
+
+Campaigns are selected by --exp (see CAMPAIGNS). Each invocation writes a fresh,
+immutable run directory under runs/ and mirrors it to runs/latest/. This file is
+the same across every campaign; campaigns differ only in the --config preset.
+See ../../prompt/c008_experiment_structure_guideline.md for the full contract.
 """
 
-import subprocess
-import sys
-from datetime import datetime
+from __future__ import annotations
+
+import argparse
+import datetime as dt
+import inspect
+import json
+import shutil
 from pathlib import Path
 
+from src import oscillator, viz
+
 ROOT = Path(__file__).resolve().parent
-RUNS_DIR = ROOT / "runs"
-FIGURE_DIR = ROOT / "figure"
+RUNS = ROOT / "runs"
 
 
-def make_run_dir(tag: str = "") -> Path:
-    stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    name = f"{stamp}_{tag}" if tag else stamp
-    run_dir = RUNS_DIR / name
-    run_dir.mkdir(parents=True, exist_ok=True)
-    return run_dir
+# ---------------------------------------------------------------- config utils
+def load_config(path: Path) -> dict:
+    """Parse flat `key: value` YAML by hand (default python3 may lack pyyaml).
+
+    Each value is cast to int, then float, else kept as a string. Blank lines
+    and `#` comments are ignored.
+    """
+    cfg: dict = {}
+    for line in path.read_text().splitlines():
+        line = line.split("#", 1)[0].strip()
+        if not line or ":" not in line:
+            continue
+        key, raw = (p.strip() for p in line.split(":", 1))
+        for cast in (int, float):
+            try:
+                cfg[key] = cast(raw)
+                break
+            except ValueError:
+                continue
+        else:
+            cfg[key] = raw
+    return cfg
 
 
-def cmd_run() -> int:
-    run_dir = make_run_dir("run")
-    print(f"Run output → {run_dir}")
-    # TODO: replace with actual experiment logic
-    print("(placeholder: add your experiment code in scripts/ and call it here)")
-    return 0
+def only_kwargs(func, cfg: dict) -> dict:
+    """Keep only the config keys `func` actually accepts."""
+    ok = set(inspect.signature(func).parameters)
+    return {k: v for k, v in cfg.items() if k in ok}
 
 
-def cmd_status() -> None:
-    print("=== Status ===")
-    if RUNS_DIR.exists():
-        runs = sorted(RUNS_DIR.iterdir())
-        print(f"Runs ({len(runs)} total):")
-        for r in runs[-5:]:
-            print(f"  {r.name}")
-        if len(runs) > 5:
-            print(f"  ... and {len(runs) - 5} more")
-    else:
-        print("No runs yet.")
-    figs = list(FIGURE_DIR.glob("*")) if FIGURE_DIR.exists() else []
-    print(f"Figures: {len(figs)} file(s) in figure/")
+# ------------------------------------------------------------------ run dirs
+def new_run_dir(tag: str, seed: int) -> Path:
+    stamp = dt.datetime.now().strftime("%Y%m%d_%H%M%S")
+    out = RUNS / f"{stamp}_{tag}_seed{seed}"
+    out.mkdir(parents=True, exist_ok=True)
+    return out
 
 
-COMMANDS = {
-    "run": cmd_run,
-    "status": cmd_status,
+def mirror_latest(out: Path) -> None:
+    latest = RUNS / "latest"
+    if latest.exists():
+        shutil.rmtree(latest)
+    shutil.copytree(out, latest)
+
+
+# ------------------------------------------------------------------ campaigns
+def exp_oscillator(cfg: dict, out: Path, seed: int) -> dict:
+    """Run one oscillator regime and write both figures. Returns metrics."""
+    res = oscillator.simulate(seed=seed, **only_kwargs(oscillator.simulate, cfg))
+    title = cfg.get("title")
+    viz.fig_trajectory(res, out / "trajectory.png", title=title)
+    viz.fig_phase(res, out / "phase.png", title=title)
+    return oscillator.metrics(res)
+
+
+CAMPAIGNS = {
+    "oscillator": exp_oscillator,
 }
 
 
+# ------------------------------------------------------------------ main
 def main() -> int:
-    if len(sys.argv) < 2 or sys.argv[1] not in COMMANDS:
-        print(__doc__)
-        print("Commands:", ", ".join(COMMANDS))
-        return 1
-    result = COMMANDS[sys.argv[1]]()
-    return result if isinstance(result, int) else 0
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--exp", required=True, choices=sorted(CAMPAIGNS))
+    ap.add_argument("--config", type=Path, default=ROOT / "config.yaml")
+    ap.add_argument("--tag", default="XX")
+    ap.add_argument("--seed", type=int, default=0)
+    args = ap.parse_args()
+
+    cfg = load_config(args.config)
+    out = new_run_dir(args.tag, args.seed)
+
+    metrics = CAMPAIGNS[args.exp](cfg, out, args.seed)
+
+    (out / "metrics.json").write_text(json.dumps(metrics, indent=2) + "\n")
+    shutil.copy(args.config, out / "config.yaml")
+    mirror_latest(out)
+
+    print(f"[{args.tag}] {args.exp}  seed={args.seed}")
+    print(f"  out     -> {out.relative_to(ROOT)}")
+    print(f"  metrics -> {metrics}")
+    return 0
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    raise SystemExit(main())

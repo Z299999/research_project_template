@@ -1,1 +1,1 @@
-{"id":"e00001","type":"experiment","name":"project_name","path":"experiments/e00001_project_name","writing_id":"w00001","description":"[what this experiment tests and which writing project it supports]"}
+{"id":"e00001","type":"experiment","name":"damped_oscillator","path":"experiments/e00001_damped_oscillator","writing_id":"w00003","status":"sample","description":"Sample experiment following c008: damped harmonic oscillator, three regimes (AA/AB/AC) from config alone; flagship figure feeds writing/w00003_sample_note."}

@@ -1,20 +1,10 @@
-# Experiment configuration
-# Fill in values for your specific experiment.
-
-experiment:
-  name: "[experiment_name]"
-  description: "[what this experiment tests]"
-
-# Model / algorithm settings
-model:
-  # key: value
-
-# Run settings
-run:
-  seed: 42
-  # key: value
-
-# Output settings
-output:
-  figure_dir: "figure"   # paper-ready figures (tracked in git)
-  run_dir: "runs"        # timestamped run outputs (gitignored)
+# Default preset = the flagship campaign (AA, underdamped).
+# Each scripts/exps/<CODE>_<name>.yaml overrides these for one campaign.
+omega: 1.0       # natural angular frequency
+zeta: 0.2        # damping ratio  (<1 underdamped, =1 critical, >1 overdamped)
+x0: 1.0          # initial displacement
+v0: 0.0          # initial velocity
+t_max: 30.0      # integration horizon
+dt: 0.01         # time step
+ic_jitter: 0.05  # seed-dependent initial-condition perturbation
+title: underdamped (zeta=0.2)
