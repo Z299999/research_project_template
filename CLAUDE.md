@@ -57,6 +57,8 @@ Files in `prompt/` are reusable prompts invoked by ID:
   `experiments/e00001_damped_oscillator`
 - **c009** — Register a paper from its title alone (identify, fetch, and add to
   `literature/`); the title-only sibling of c003
+- **c010** — Freeze a computational claim as a runnable verification script, with a
+  scope line, positive controls, and an explicit `NOT ASSERTED` block
 
 Usage: "perform c000 on b00006 chapter 3" means run the reading review prompt on that source.
 
