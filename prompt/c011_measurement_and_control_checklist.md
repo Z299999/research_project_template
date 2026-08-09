@@ -106,6 +106,37 @@ attempts — will drift from it.
   updated without the content, and every gate that reads only the marker then passes while
   the content rots.
 
+## 8. A count that stands in for a meaning needs a second method
+
+The most common self-measurement is *"how often did we actually do X?"* — where X is a practice, a
+sense of a word, a form of compliance. The instrument is usually a regex, and the output is a
+number, and the number looks like a measurement.
+
+It is not one until a second method agrees with it.
+
+Four failures of this shape, from one project, in one working period:
+
+| the instrument | how it failed |
+|---|---|
+| a word list for *"did the note say which case it covered"* | missed a compliant note whose wording it did not anticipate; the reported rate was one worse than the true one |
+| a term grep for a concept | matched the word in a **different sense** — the same string, a different meaning |
+| a pattern for *"carries a verbatim theorem statement"* | too tight by a factor of about 2.5, missing a source the project had transcribed itself |
+| a grep of source code for invariant names | reported four ID systems as gated; **sabotage showed one was not** |
+
+Note what separates the fourth. The first three were fixed by a looser pattern. The fourth was
+reversed only because the second method was **a different kind of evidence** — breaking the thing on
+purpose and watching whether the check fired — rather than a variant of the first.
+
+**The rule, and it costs nothing.** When a count stands in for a meaning:
+
+- run a second pattern, deliberately looser, and **report the range** rather than a point;
+- where possible make the second method a different *kind* — sabotage, a hand count of a sample, a
+  known-answer case — because a regex checked against another regex shares its blind spot;
+- name one case the instrument found and one it did not, so the reader can see its edge.
+
+**A single number from a single regex is a measurement with no error bar.** Reporting it as though it
+had one is the failure, not the regex.
+
 ## Quick pass before recording a result
 
 1. What would have made my control fail? Could it have?
@@ -115,3 +146,5 @@ attempts — will drift from it.
 5. Did any optimum land on a search boundary?
 6. If this closes a branch, is the obstruction recorded? If it parks one, is the reopen
    condition executable?
+7. If a number stands in for a meaning, did a second and differently-shaped method agree,
+   and am I reporting a range rather than a point?
