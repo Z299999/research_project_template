@@ -62,6 +62,8 @@ Files in `prompt/` are reusable prompts invoked by ID:
 - **c011** — Measurement and control checklist: what a control must be able to
   fail at, fixing acceptance criteria before seeing numbers, noise floors, and
   recording an obstruction whenever a branch is closed
+- **c012** — Attempt tree: keep a judged record of what was tried, with kill
+  conditions written before the work and obstructions registered at close
 
 Usage: "perform c000 on b00006 chapter 3" means run the reading review prompt on that source.
 
