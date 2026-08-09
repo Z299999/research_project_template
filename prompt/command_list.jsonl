@@ -9,3 +9,4 @@
 {"id":"c008","name":"experiment_structure_guideline","title":"Experiment Structure Guideline","path":"prompt/c008_experiment_structure_guideline.md"}
 {"id":"c009","name":"add_literature_from_title","title":"Add Literature From Title Prompt","path":"prompt/c009_add_literature_from_title.md"}
 {"id": "c010", "name": "verification_script", "title": "Verification Script Checklist", "path": "prompt/c010_verification_script.md"}
+{"id":"c011","name":"measurement_and_control_checklist","title":"Measurement and Control Checklist","path":"prompt/c011_measurement_and_control_checklist.md"}

@@ -57,6 +57,9 @@ Files in `prompt/` are reusable prompts invoked by ID:
   `experiments/e00001_damped_oscillator`
 - **c009** — Register a paper from its title alone (identify, fetch, and add to
   `literature/`); the title-only sibling of c003
+- **c011** — Measurement and control checklist: what a control must be able to
+  fail at, fixing acceptance criteria before seeing numbers, noise floors, and
+  recording an obstruction whenever a branch is closed
 - **c010** — Freeze a computational claim as a runnable verification script, with a
   scope line, positive controls, and an explicit `NOT ASSERTED` block
 
