@@ -64,6 +64,13 @@ Files in `prompt/` are reusable prompts invoked by ID:
   recording an obstruction whenever a branch is closed
 - **c012** — Attempt tree: keep a judged record of what was tried, with kill
   conditions written before the work and obstructions registered at close
+- **c013** — Making a practice survive: the adoption decay curve, why what fires
+  unasked outlives what must be remembered, retiring on measurement, and why a
+  number written about a growing artefact goes stale in silence
+- **c014** — Make the corpus retrievable: recording and retrieving are two
+  separate builds, ranking on the right field per class of artefact, validating
+  a retriever on the misses you actually made, and translating a record into the
+  vocabulary you will later query in
 
 Usage: "perform c000 on b00006 chapter 3" means run the reading review prompt on that source.
 

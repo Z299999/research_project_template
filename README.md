@@ -28,7 +28,7 @@ drafts/           — email drafts and planning notes for advisor communication
                     (d0001 sample included)
 feedbacks/        — advisor feedback notes and revision records
                     (f0001 sample included)
-prompt/           — reusable AI prompt templates (c000–c012)
+prompt/           — reusable AI prompt templates (c000–c014)
 ```
 
 ## Quick Start
@@ -57,6 +57,8 @@ Claude Code session:
 | `c010` | Freeze a computational claim as a runnable verification script |
 | `c011` | Measurement and control checklist (falsifiable controls, pre-fixed criteria, noise floors, recorded obstructions) |
 | `c012` | Attempt tree: judged record of what was tried, with verdicts and registered obstructions |
+| `c013` | Making a practice survive (adoption decay, triggers vs habits, retiring on measurement, numbers that go stale) |
+| `c014` | Make the corpus retrievable (ranking per artefact class, validating on real misses, recording for later retrieval) |
 
 Example: *"perform c003 on arXiv:2301.12345"*, *"perform c009 on 'Attention Is All You Need'"*, or *"perform c000 on b00005"*.
 

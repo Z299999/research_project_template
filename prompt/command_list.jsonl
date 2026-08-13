@@ -11,3 +11,5 @@
 {"id": "c010", "name": "verification_script", "title": "Verification Script Checklist", "path": "prompt/c010_verification_script.md"}
 {"id":"c011","name":"measurement_and_control_checklist","title":"Measurement and Control Checklist","path":"prompt/c011_measurement_and_control_checklist.md"}
 {"id": "c012", "name": "attempt_tree", "title": "Attempt Tree Checklist", "path": "prompt/c012_attempt_tree.md"}
+{"id":"c013","name":"making_a_practice_survive","title":"Making a Practice Survive","path":"prompt/c013_making_a_practice_survive.md"}
+{"id":"c014","name":"make_the_corpus_retrievable","title":"Make the Corpus Retrievable","path":"prompt/c014_make_the_corpus_retrievable.md"}
