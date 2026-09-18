@@ -29,7 +29,21 @@ drafts/           — email drafts and planning notes for advisor communication
 feedbacks/        — advisor feedback notes and revision records
                     (f0001 sample included)
 prompt/           — reusable AI prompt templates (c000–c014)
+tools/            — programs that enforce the practices, rather than describing them
+  commit.py       — commits with the rules checked BEFORE the commit exists
+  lookback.py     — every fifth work unit, re-check the previous five in writing
+  todo.py         — the open-debt list, printed on that same schedule
+  citecheck.py    — quotations must be in the cited work; prints the denominator
+  lit_index.py    — literature/ must be a bijection with bibliography.jsonl
+  source.py       — what a cited work says, by bib key, in one call
+  verify_arxiv.py — check arXiv ids against real titles before downloading
+SPRINT.md         — process log: what the process did and what it got wrong
+TODO.md           — open debts, read aloud by tools/lookback.py
 ```
+
+Each tool's docstring explains the failure that caused it to exist. See `tools/README.md`
+for why they are programs and not lines in `CLAUDE.md`: a rule that depends on remembering
+is not a rule.
 
 ## Quick Start
 

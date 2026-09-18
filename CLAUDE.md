@@ -121,6 +121,22 @@ Each paper has two identifiers recorded in `literature/bibliography.jsonl`:
 - Commit meaningful source changes only; do not add unrelated caches or artifacts
   unless they are already intentionally tracked
 - Use `TIMELINE.md` to track research progress, advisor feedback, and next steps
+- Commit through `python3 tools/commit.py`, with a `Cycle: #N` trailer on every work unit.
+  It refuses an over-long subject, a missing trailer, and an overdue lookback, and parks the
+  message rather than destroying it. The refusals exist because each of these rules was first
+  written down, obeyed for a while, and then quietly dropped
+- Every fifth work unit, run `python3 tools/lookback.py` and answer its four questions in
+  writing into `SPRINT.md`. This is the single highest-yield habit in this repository; `commit.py`
+  will not let a sixth unit through without it
+- Record anything deferred in `TODO.md`, not in prose. `lookback.py` prints it, which is the
+  only reason it gets read
+- Before claiming what a source says, check it: `python3 tools/citecheck.py <main.tex>` for
+  quotations and the reference denominator, `python3 tools/source.py <bib_key> "<phrase>"` to
+  read the passage at first hand. A reference you cite but do not hold gets a `metadata_only`
+  entry in `bibliography.jsonl` with a `verified_against` field naming what you checked it
+  against
+- Read `tools/README.md` once, and each tool's docstring when you first use it. The docstrings
+  carry the failures the tools were built from, which is the part worth transferring
 - Commit messages should always use a typed subject line; see
   `prompt/c007_commit_message_checklist.md` for the full prefix list
 - When a session touches several distinct areas, split into multiple focused commits
