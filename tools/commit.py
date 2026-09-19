@@ -58,6 +58,17 @@ def refuse(reason):
              f"  fix it there, then:  python3 tools/commit.py --parked")
 
 
+# A second message piped in while one is parked used to overwrite it in silence. In the project
+# this came from it destroyed four long commit messages in one session, and every time it read as
+# the author's mistake rather than the tool's, because nothing said the first was gone.
+if PARKED.exists() and not {"--parked", "--force-park"} & set(sys.argv[1:]):
+    first = PARKED.read_text().split("\n", 1)[0]
+    sys.exit("REFUSED: a message is already parked and this would overwrite it.\n"
+             f"  parked subject: {first}\n"
+             "  finish it:      python3 tools/commit.py --parked\n"
+             f"  or discard it:  rm {PARKED}\n"
+             "  or override:    python3 tools/commit.py --force-park < your-message")
+
 if "--parked" in sys.argv[1:]:
     if not PARKED.exists():
         sys.exit("no parked message to retry")
