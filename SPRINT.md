@@ -53,3 +53,40 @@ question is not "is this important" but "has this been written down before and i
 question 4 is for.
 
 ---
+
+## Lookback at `#10`
+
+**1. What did they claim?**
+
+- `#6` A practice needing a program has already failed once.
+- `#7` A red page proves nothing about what is not on it.
+- `#8` The revision layer documented, and a defect in `commit.py` recorded not fixed.
+- `#9` Both builds of the worked note, so the convention ships runnable.
+- `#10` The claim layer, for defects that are not in the numbers.
+
+**2. Is each still true?**
+
+Yes. `#10` was tested against this repository's own sample note rather than asserted, and the
+testing paid: `appendices.py` fell back to the whole document when there was no `\appendix`
+marker and counted a main-text section as an appendix, silently. A tool in a directory built to
+catch plausible wrong answers was producing one. It now refuses and says why.
+
+**3. What was deferred?**
+
+`t01` still describes the example item nobody has replaced. `t02`, `commit.py` losing a parked
+message, has now cost three messages across two repositories and is still open by choice.
+
+**4. The finding worth keeping.**
+
+Every tool in `#10` exists for the same blind spot, and naming it is worth more than the six
+programs: **a number can be correct and its sentence false, and every checker reads numbers.**
+The count resolves, the interval reproduces, the quote is verbatim, and the claim around them is
+still wrong, because what failed was the word "every", or the list the count claimed to describe,
+or the fact that the correction landed in one of the two places the claim lives.
+
+That is why this layer arrives last and cannot arrive first. Until the numbers are trustworthy
+there is nothing to notice the discrepancy against; the sentence and the measurement have to
+disagree before anyone can see which one is lying.
+
+**What the next five are for.** The experiment layer, if the reconstruction now under way shows
+one worth shipping. Nothing else is planned, which is the honest answer.
