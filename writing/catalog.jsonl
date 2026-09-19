@@ -1,3 +1,3 @@
-{"id":"w00001_paper_template","title":"Paper Template (article/conference)","path":"writing/w00001_project_name","status":"template","tags":["paper","theorem","proof","multi-section"]}
-{"id":"w00002_report_template","title":"Research Survey/Report Template","path":"writing/w00002_report_template","status":"template","tags":["report","survey","papercode","personcode","tikz-graph"]}
-{"id":"w00003_sample_note","title":"Sample Note (worked, builds; figure from e00001)","path":"writing/w00003_sample_note","status":"sample","experiment_id":"e00001","tags":["sample","note","figure-from-experiment","goal","worklog","citation"]}
+{"id": "w00001_project_name", "title": "Paper Template (article/conference)", "path": "writing/w00001_project_name", "status": "template", "tags": ["paper", "theorem", "proof", "multi-section"]}
+{"id": "w00002_report_template", "title": "Research Survey/Report Template", "path": "writing/w00002_report_template", "status": "template", "tags": ["report", "survey", "papercode", "personcode", "tikz-graph"]}
+{"id": "w00003_sample_note", "title": "Sample Note (worked, builds; figure from e00001)", "path": "writing/w00003_sample_note", "status": "sample", "experiment_id": "e00001", "tags": ["sample", "note", "figure-from-experiment", "goal", "worklog", "citation"]}
