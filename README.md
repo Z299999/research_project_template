@@ -45,6 +45,13 @@ Each tool's docstring explains the failure that caused it to exist. See `tools/R
 for why they are programs and not lines in `CLAUDE.md`: a rule that depends on remembering
 is not a rule.
 
+`ARC.md` is the reconstruction of the project these were distilled from, taken from its git
+history rather than from its own account of itself, and including what it got wrong: fifteen
+experiments that stopped with no written ending, a catalog that still marks three of them active,
+a two-month gap nothing records, and a front door that described the repository as paused for
+three months while it ran. Read it before deciding these tools are overhead. They will look like
+overhead until you have paid for one of them yourself.
+
 ## Quick Start
 
 **Day 1 — repo setup:**
