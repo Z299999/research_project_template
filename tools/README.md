@@ -59,6 +59,7 @@ turns "this is everything I changed" into something a build reports.
 | `prosecheck.py` | "Compressed to note-form" as numbers, so a rewrite is checked and not felt. |
 | `appendices.py` | How much of the argument has been moved out of the part a reviewer must read. |
 | `absencecheck.py` | Every sentence claiming something does *not* exist. `dupclaim` finds a claim stated twice; this is the converse, and absence is the one thing a local check cannot see. |
+| `settingcheck.py` | Does a caption describe the runs the table is made of? Every other checker compares a claim to its own evidence; this one compares a claim to the configuration that produced the evidence. |
 
 The shared lesson, and it is worth more than the seven programs: **a number can be correct and
 its sentence false, and every checker reads numbers.** The count resolves, the interval reproduces,
@@ -72,6 +73,11 @@ checker handed only the root file reports clean on text it never opened.
 ## Four things none of these can do
 
 Each was learned the same way, by a defect surviving every check in this directory.
+
+**The most serious defect in a document is rarely an instance of the class you went looking for.**
+A search for false novelty claims turned up an undisclosed experimental asymmetry, because
+settling "is this the first time" required opening the run metadata. Nine false claims were found
+by that search and the one thing it could not classify was worth more than all nine.
 
 **A checker written by the same hand as its subject shares its assumptions, so it confirms them.**
 A table was verified cell by cell against its generator and the generator against the data, and
