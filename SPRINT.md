@@ -133,3 +133,31 @@ is the finding, and it is not available to anyone working from the account.
 
 **What the next five are for.** Nothing is planned. The distillation that motivated `#1` through
 `#15` is complete; further units should wait for a project here to need something.
+
+## Lookback at `#20`
+
+**1. What did they claim?**
+
+- `#16` (folded) The failures distilled better than the successes.
+- `#17` The arc of the source project, including what it got wrong.
+- `#18` `absencecheck`, the converse of `dupclaim`.
+- `#19` `commit.py` stops destroying a parked message, as shipped it did.
+- `#20` `settingcheck`, comparing a caption to the configuration behind it.
+
+**2. Is each still true?**
+
+Yes. `#19` is the one worth re-stating: this template shipped with a defect that destroyed work, and it was found by using it rather than by reading it. Four commit messages were lost in the source project before anyone looked at the code.
+
+**3. What was deferred?**
+
+`t01`, the example TODO item nobody has replaced. `t02` is closed by `#19`.
+
+**4. The finding worth keeping.**
+
+Three of the last five units exist because a tool in this directory was wrong, and in every case the tool printed something reassuring while being wrong. `commit.py` printed a refusal and silently destroyed the previous message. `appendices.py` printed a section count for a document with no appendix. `settingcheck.py`, before four separate fixes, printed "nothing to check" while looking directly at the table it had been written for, because a regex stopped at a LaTeX brace.
+
+**A checker's failure mode is not a crash. It is a clean line.** Every one of these would have been caught by running the tool against a case where the answer is already known and confirming it fails, which took minutes in each case and was not done first.
+
+So the rule this directory should follow and did not: **before trusting a checker, break the thing it checks and confirm it complains.** `markupcheck` was built that way, against two forged edits, and is the only tool here that has never been wrong.
+
+**What the next five are for.** Nothing is planned. The distillation is complete and further units should wait for a project here to need something.
