@@ -19,3 +19,4 @@ nobody can start and nobody can see is worse than one blocked in the open.
 
 - [ ] (t01) me | opened #1 | [Replace: something this project owes itself, stated so that a
       stranger could tell whether it is done]
+- [ ] (t02) me | opened #8 | `commit.py` loses a parked message when a second message is piped in while one is parked. It bit twice in one session: pipe B while A is parked and A is gone, silently. Refuse the new message, or park under a second name, or print what is being overwritten

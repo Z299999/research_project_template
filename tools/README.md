@@ -37,6 +37,17 @@ one, answer the four questions, see your debts while you answer question three.
 | `source.py` | What a cited work actually says, by bib key, in one call. Makes reading the source cheaper than trusting a memory of it. |
 | `verify_arxiv.py` | Check arXiv ids against real titles before downloading. A wrong id does not fail, it fetches a different paper. |
 
+## Revision, the honesty layer
+
+| | |
+|---|---|
+| `writing/revision.sty` | `\add` red, `\del` struck through, a `cut` block for what a strikeout cannot cross, and the maths variants. One source; `build.py` runs a second pass with `\CLEANBUILD` so `main.pdf` shows every change and `main_clean.pdf` is what you submit. Any page limit belongs to the clean one, because struck-out text still occupies space. |
+| `markupcheck.py` | Reconstructs the base by keeping every deletion and dropping every addition, and requires it to match the frozen ref in the project's `REVISION_BASE`. Catches base text deleted with no strikeout, and new text left black. |
+
+The package is the easy half. A page full of red proves nothing about what is *not* on it, and
+markup applied after the edit, from memory, drifts in exactly those two ways. The checker is what
+turns "this is everything I changed" into something a build reports.
+
 ## Why this order
 
 Process before sources, sources before claims. Each layer only becomes visible once the one

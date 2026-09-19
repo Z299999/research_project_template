@@ -137,6 +137,11 @@ Each paper has two identifiers recorded in `literature/bibliography.jsonl`:
   against
 - Read `tools/README.md` once, and each tool's docstring when you first use it. The docstrings
   carry the failures the tools were built from, which is the part worth transferring
+- During a revision round, every edit goes through `\add{}` / `\del{}` from `writing/revision.sty`.
+  Never delete base text outright. `python3 build.py` produces `main.pdf` (marked up) and
+  `main_clean.pdf` (what you submit); `python3 tools/markupcheck.py <project>` then checks that the
+  markup is an honest diff against the ref in that project's `REVISION_BASE`. Freeze the base when
+  the round starts, move it when the round is accepted and the markup is cleared
 - Commit messages should always use a typed subject line; see
   `prompt/c007_commit_message_checklist.md` for the full prefix list
 - When a session touches several distinct areas, split into multiple focused commits
