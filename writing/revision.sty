@@ -1,0 +1,67 @@
+% revision.sty -- show what changed, and prove the showing is honest.
+%
+% Additions in red, deletions struck out in grey, from ONE source that builds two PDFs: the
+% marked-up one you review, and the clean one you submit. `tools/markupcheck.py` then reconstructs
+% the previous version from the marked-up source and requires it to match, which is what makes
+% "this is everything I changed" a thing a build reports rather than a thing you are asked to
+% believe.
+%
+% Why a package and not a habit: a revision marked up by hand, after the edit, from memory, drifts
+% in exactly two ways, and neither is visible on a red page. Text disappears with no strikeout, so
+% a deletion is invisible. New text stays black, so an addition reads as if it had always been
+% there. The checker exists for those two and for nothing else.
+%
+% USE
+%   \usepackage{revision}          % build.py puts writing/ on TEXINPUTS
+%   \add{new text}                 \del{removed text}
+%   \begin{cut} ... \end{cut}      a removed block; \sout cannot cross a display
+%   \delcite{\citep{foo}}          \sout cannot contain \cite
+%   \deleq{E = mc^2}               a removed display, struck with a rule of its own
+%   \delm{x^2}                     a removed fragment inside a display
+%   \addeq{E = mc^2}               a new display
+%   \redhere                       a new row inside an existing numbered display
+%   \edit{moved from Section 3}    a structural change a strikeout cannot express
+%
+% The clean pass is switched on by \CLEANBUILD, which build.py defines on the command line.
+% Nothing in the source changes between the two builds.
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{revision}[2026/09/19 revision markup with an honesty check]
+
+\RequirePackage{xcolor}
+% \normalem is load bearing. Without it ulem redefines \emph as an underline, silently, across
+% the whole document.
+\RequirePackage{ulem}\normalem
+\RequirePackage{cancel}
+\RequirePackage{comment}
+
+\newif\ifmarkup
+\markuptrue
+\ifdefined\CLEANBUILD\markupfalse\fi
+
+\ifmarkup
+  \newcommand{\add}[1]{\textcolor{red}{#1}}
+  \newcommand{\del}[1]{\textcolor{gray}{\sout{#1}}}
+  % Grey alone reads as live text, so a removed block is bracketed explicitly.
+  \specialcomment{cut}%
+    {\begingroup\color{gray}\textbf{[CUT}\,$\blacktriangleright$\textbf{]}\enspace}%
+    {\enspace\textbf{[}$\blacktriangleleft$\,\textbf{CUT]}\endgroup\space}
+  \newcommand{\note}[1]{\textcolor{red}{\textsuperscript{\,#1}}}
+  \newcommand{\delcite}[1]{\textcolor{gray}{#1}}
+  \newcommand{\deleq}[1]{\[\textcolor{gray}{\cancel{#1}}\]}
+  % \color inside the group survives an aligned body, which \textcolor around one does not.
+  \newcommand{\addeq}[1]{\[\color{red}#1\]}
+  \newcommand{\redhere}{\color{red}}
+  \newcommand{\delm}[1]{\textcolor{gray}{\cancel{#1}}}
+  \newcommand{\edit}[1]{\textcolor{gray}{\footnotesize[#1]\ }}
+\else
+  \newcommand{\add}[1]{#1}
+  \newcommand{\del}[1]{}
+  \excludecomment{cut}
+  \newcommand{\note}[1]{}
+  \newcommand{\delcite}[1]{}
+  \newcommand{\deleq}[1]{}
+  \newcommand{\addeq}[1]{\[#1\]}
+  \newcommand{\redhere}{}
+  \newcommand{\delm}[1]{}
+  \newcommand{\edit}[1]{}
+\fi
