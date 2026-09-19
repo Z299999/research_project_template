@@ -48,6 +48,26 @@ The package is the easy half. A page full of red proves nothing about what is *n
 markup applied after the edit, from memory, drifts in exactly those two ways. The checker is what
 turns "this is everything I changed" into something a build reports.
 
+## Claims, the layer numerical audits are blind to
+
+| | |
+|---|---|
+| `quantcheck.py` | Every universal claim, as a worklist. "No paper reports it" reached an abstract in a section reporting two. |
+| `countcheck.py` | Does a cardinal match the list it introduces? Five instances in two windows, every one found by a person reading prose. |
+| `dupclaim.py` | A claim stated in two places, so correcting one shows you the other. You grep the sentence you edited, it appears once, you stop. |
+| `qualcheck.py` | Which concessions live only in an appendix? A caveat's value is set by where it sits. |
+| `prosecheck.py` | "Compressed to note-form" as numbers, so a rewrite is checked and not felt. |
+| `appendices.py` | How much of the argument has been moved out of the part a reviewer must read. |
+
+The shared lesson, and it is worth more than the six programs: **a number can be correct and its
+sentence false, and every checker reads numbers.** The count resolves, the interval reproduces,
+the quote is verbatim, and the claim around them is still wrong, because what failed was the word
+*every*, or the list the count claimed to describe, or the fact that the correction landed in one
+of the two places the claim lives.
+
+`texsrc.py` is shared by all of them. A project split across `sections/` is one document, and a
+checker handed only the root file reports clean on text it never opened.
+
 ## Why this order
 
 Process before sources, sources before claims. Each layer only becomes visible once the one
@@ -56,7 +76,8 @@ and you cannot see that a claim appears in three places until your sources are s
 project this was distilled from the layers arrived in exactly that order, spread over four
 months, each one built the week after a failure made it unavoidable.
 
-Two layers are not here yet, and are worth building when you meet them rather than in advance:
-**claim integrity** (the same claim stated in two places, a number that does not match the list
-it describes, a universal claim nobody has counted) and **honesty** (a concession that lives only
-in an appendix, an argument filed where a reviewer will not read it).
+Why the claim layer cannot come first: until the numbers are trustworthy there is nothing to
+notice a discrepancy against. The sentence and the measurement have to disagree before anyone can
+see which one is lying. In the project this came from, every tool in that layer was built in the
+week after a defect of exactly its shape reached a draft, and none of them would have been
+written earlier, because earlier the defects were still in the numbers.
