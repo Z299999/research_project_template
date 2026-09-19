@@ -90,3 +90,46 @@ disagree before anyone can see which one is lying.
 
 **What the next five are for.** The experiment layer, if the reconstruction now under way shows
 one worth shipping. Nothing else is planned, which is the honest answer.
+
+## Lookback at `#15`
+
+**1. What did they claim?**
+
+- `#11` A number can be correct and its sentence false.
+- `#12` The claim layer, for defects that are not in the numbers.
+- `#13` Four layers, and why the last one cannot come first.
+- `#14` What a repository claims about itself that is no longer true.
+- `#15` The arc of the source project, including what it got wrong.
+
+**2. Is each still true?**
+
+Yes, and `#14` proved itself on this repository within a minute of being written: the writing
+catalog's first entry carried an id that did not match its own folder, so the two catalogs here
+were using different conventions and nobody had noticed. The checker was keyed on a parsed id and
+reported that as six problems instead of one, which is its own small lesson about joining on the
+field a file actually carries.
+
+`#15` is the only unit here that is not a tool, and it exists because the tools without it teach
+the wrong thing.
+
+**3. What was deferred?**
+
+`t01`, the example item nobody has replaced. `t02`, `commit.py` losing a parked message, now four
+messages across two repositories and still open by choice.
+
+**4. The finding worth keeping.**
+
+Distilling a working method from a real project turned up more by reconstructing what the project
+did **badly** than by cataloguing what it did well. The practices worth shipping were already
+half-visible in the tools. What was invisible, and what only the git history gave up, was the
+shape of the failures: fifteen experiments stopping with no ending in a project that demonstrably
+knew how to write one, a status field filled from a folder's existence, a front door that lied
+for three months, and a pre-registration discipline that arrived *after* the paper rather than
+before it.
+
+A project's own account of itself is written from what its author can remember, which is the
+recent part. The history is written from what happened. Where the two disagree, the disagreement
+is the finding, and it is not available to anyone working from the account.
+
+**What the next five are for.** Nothing is planned. The distillation that motivated `#1` through
+`#15` is complete; further units should wait for a project here to need something.
