@@ -13,7 +13,7 @@ A rule that depends on remembering is not a rule. Every practice here was first 
 checklist, obeyed for a while, and then quietly dropped. What made them stick was moving them
 into the path you have to walk anyway: `commit.py` refuses, rather than `CLAUDE.md` reminding.
 
-Checklists are still useful. `prompt/c000`–`c014` are checklists. The difference is that a
+Checklists are still useful. `prompt/c000`–`c016` are checklists. The difference is that a
 checklist teaches and a refusal enforces, and the two fail in opposite directions: a checklist
 fails silently when you are tired, which is exactly when you need it.
 

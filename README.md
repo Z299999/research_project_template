@@ -28,7 +28,7 @@ drafts/           — email drafts and planning notes for advisor communication
                     (d0001 sample included)
 feedbacks/        — advisor feedback notes and revision records
                     (f0001 sample included)
-prompt/           — reusable AI prompt templates (c000–c014)
+prompt/           — reusable AI prompt templates (c000–c016)
 tools/            — programs that enforce the practices, rather than describing them
   commit.py       — commits with the rules checked BEFORE the commit exists
   lookback.py     — every fifth work unit, re-check the previous five in writing
@@ -80,6 +80,8 @@ Claude Code session:
 | `c012` | Attempt tree: judged record of what was tried, with verdicts and registered obstructions |
 | `c013` | Making a practice survive (adoption decay, triggers vs habits, retiring on measurement, numbers that go stale) |
 | `c014` | Make the corpus retrievable (ranking per artefact class, validating on real misses, recording for later retrieval) |
+| `c015` | Paper sprint: actor, independent critics, steward decision table, 60-minute timeline |
+| `c016` | The decisive first calculation: run the one check that decides novelty before committing to a problem |
 
 Example: *"perform c003 on arXiv:2301.12345"*, *"perform c009 on 'Attention Is All You Need'"*, or *"perform c000 on b00005"*.
 

@@ -13,3 +13,5 @@
 {"id": "c012", "name": "attempt_tree", "title": "Attempt Tree Checklist", "path": "prompt/c012_attempt_tree.md"}
 {"id":"c013","name":"making_a_practice_survive","title":"Making a Practice Survive","path":"prompt/c013_making_a_practice_survive.md"}
 {"id":"c014","name":"make_the_corpus_retrievable","title":"Make the Corpus Retrievable","path":"prompt/c014_make_the_corpus_retrievable.md"}
+{"id":"c015","name":"paper_sprint_actor_critic","title":"Paper Sprint: Actor, Critics, Steward","path":"prompt/c015_paper_sprint_actor_critic.md"}
+{"id":"c016","name":"decisive_first_calculation","title":"The Decisive First Calculation","path":"prompt/c016_decisive_first_calculation.md"}

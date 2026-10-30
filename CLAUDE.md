@@ -71,6 +71,12 @@ Files in `prompt/` are reusable prompts invoked by ID:
   separate builds, ranking on the right field per class of artefact, validating
   a retriever on the misses you actually made, and translating a record into the
   vocabulary you will later query in
+- **c015** — Paper sprint: Actor writes, independent Critics review, a Steward
+  records accept/reject with a reason for every item; 60-minute timeline,
+  checkpoint uploads, and the mathematical-honesty rules the run surfaced
+- **c016** — The decisive first calculation: before committing to a problem, run
+  the one calculation that decides whether it is new, and agree on the physical
+  meaning of the model first
 
 Usage: "perform c000 on b00006 chapter 3" means run the reading review prompt on that source.
 

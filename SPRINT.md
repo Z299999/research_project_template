@@ -161,3 +161,28 @@ Three of the last five units exist because a tool in this directory was wrong, a
 So the rule this directory should follow and did not: **before trusting a checker, break the thing it checks and confirm it complains.** `markupcheck` was built that way, against two forged edits, and is the only tool here that has never been wrong.
 
 **What the next five are for.** Nothing is planned. The distillation is complete and further units should wait for a project here to need something.
+
+## 2026-10-29: a timed paper sprint, distilled into `c015` and `c016`
+
+**What the sprint did.** A 6-page two-column control-conference draft was taken from brief to
+submittable in about an hour, using an Actor, independent Critics and a Steward (`c015`). A
+literature agent ran first and returned verified section and theorem pointers; it also caught
+wrong DOIs and a wrong title in an older bibliography file. Five critic rounds ran, then a
+citation-fidelity pass, a readability pass and a late-edit audit. Four checkpoint uploads
+(v1 to v4) went out, one after each round.
+
+**What it got wrong.**
+
+- The page count oscillated around the limit for several rounds: cuts and critic-driven
+  additions alternated with no line budget per round.
+- One critic reviewed a stale PDF; its items were rejected in the Steward table with that reason,
+  but the round was partly wasted.
+- Two overclaims written by the Actor survived into round 2: one noticed while processing the
+  novelty critic, one (a false trade-off) caught by the round-2 fresh referee.
+- A model change left the old name for a quantity in two places; only a late reader caught it.
+
+**What it taught.** The mathematics converged by the third round; every later round found prose,
+not proofs. So the late rounds should be aimed at prose damage (fidelity to sources, cuts,
+terminology), and the citation-fidelity pass belongs early, not last. A second lesson from the
+same weeks, about choosing problems rather than writing them, is `c016`: run the one calculation
+that decides novelty before committing, and settle what the model means physically first.
